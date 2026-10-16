@@ -1,0 +1,229 @@
+
+:root {
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: #eaf0ff;
+    background: #0b1020;
+    font-synthesis: none;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: radial-gradient(ellipse at top right, #192b4d, #0b1020 60%);
+}
+
+header, main, footer {
+    width: min(1100px, 92%);
+    margin: auto;
+}
+
+header {
+    padding: 40px 0 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+h1 {
+    margin: 6px 0;
+    font-size: clamp(28px, 4vw, 42px);
+}
+
+h2 {
+    margin-top: 0;
+}
+
+.eyebrow, .card > p {
+    color: #8ca9ff;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.subtitle, .muted, small {
+    color: #a7b3ca;
+}
+
+.status {
+    border: 1px solid #31425e;
+    padding: 10px 14px;
+    border-radius: 24px;
+    white-space: nowrap;
+}
+
+.status span {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin-right: 7px;
+    border-radius: 50%;
+    background: #54d6a0;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    margin-bottom: 18px;
+}
+
+.card, .panel {
+    background: rgba(19, 29, 51, 0.92);
+    border: 1px solid #293852;
+    border-radius: 16px;
+    padding: 22px;
+}
+
+.card h2 {
+    font-size: 30px;
+    margin: 12px 0;
+}
+
+.workspace {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+label {
+    display: block;
+    margin: 18px 0 7px;
+    font-size: 14px;
+}
+
+input {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    color: #fff;
+    background: #0b1427;
+    border: 1px solid #3b4b67;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+button {
+    width: 100%;
+    margin-top: 22px;
+    padding: 13px;
+    background: #6b8cff;
+    color: #071126;
+    border: 0;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #90a8ff;
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: wait;
+}
+
+.result-badge {
+    display: inline-block;
+    margin: 15px 0;
+    padding: 10px 16px;
+    background: #273650;
+    border-radius: 9px;
+    font-weight: 700;
+}
+
+.result-badge.low {
+    background: #174b3c;
+    color: #8ff0c6;
+}
+
+.result-badge.medium {
+    background: #5b461c;
+    color: #ffdb85;
+}
+
+.result-badge.high {
+    background: #612c39;
+    color: #ffabb8;
+}
+
+.signal-box {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    margin-top: 26px;
+    padding: 18px;
+    background: #0c1425;
+    border-radius: 12px;
+}
+
+.signal-box p {
+    margin: 0 0 8px;
+}
+
+.signal-box h2 {
+    margin: 0;
+}
+
+.signal-light {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #364258;
+}
+
+.signal-light.red {
+    background: #ff5b67;
+}
+
+.signal-light.yellow {
+    background: #ffca58;
+}
+
+.signal-light.green {
+    background: #46d6a0;
+}
+
+.disclaimer {
+    margin-top: 18px;
+    color: #a7b3ca;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.chart-panel {
+    margin-top: 18px;
+}
+
+#trafficChart {
+    max-height: 280px;
+}
+
+#message {
+    color: #ffabb8;
+    font-size: 14px;
+}
+
+footer {
+    padding: 28px 0;
+    text-align: center;
+    color: #a7b3ca;
+    font-size: 13px;
+}
+
+@media (max-width: 700px) {
+    header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .stats, .workspace {
+        grid-template-columns: 1fr;
+    }
+}

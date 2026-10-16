@@ -1,0 +1,1 @@
+{"feature": 1, "threshold": 127.5, "left": {"feature": 1, "threshold": 64.5, "left": {"feature": 2, "threshold": 34.5, "left": {"class": "Medium"}, "right": {"class": "Low"}}, "right": {"feature": 2, "threshold": 24.5, "left": {"feature": 1, "threshold": 90.0, "left": {"class": "Medium"}, "right": {"class": "High"}}, "right": {"class": "Medium"}}}, "right": {"class": "High"}}

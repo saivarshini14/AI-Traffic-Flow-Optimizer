@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Traffic Flow Optimizer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <div>
+            <p class="eyebrow">SMART CITY • MACHINE LEARNING</p>
+            <h1>AI Traffic Flow Optimizer</h1>
+            <p class="subtitle">Traffic prediction and signal timing simulation</p>
+        </div>
+        <span class="status"><span></span> Local Demo</span>
+    </header>
+
+    <main>
+        <section class="stats">
+            <article class="card">
+                <p>VEHICLES ENTERED</p>
+                <h2 id="vehicleStat">—</h2>
+                <small>Current prediction input</small>
+            </article>
+            <article class="card">
+                <p>TRAFFIC LEVEL</p>
+                <h2 id="levelStat">—</h2>
+                <small>Random Forest prediction</small>
+            </article>
+            <article class="card">
+                <p>AVG. SPEED</p>
+                <h2 id="speedStat">—</h2>
+                <small>km/h supplied as input</small>
+            </article>
+        </section>
+
+        <section class="workspace">
+            <article class="panel">
+                <h2>Traffic details</h2>
+                <p class="muted">Enter a road's estimated traffic conditions.</p>
+
+                <form id="trafficForm">
+                    <label for="hour">Hour of day (0–23)</label>
+                    <input id="hour" type="number" min="0" max="23" value="18" required>
+
+                    <label for="vehicles">Number of vehicles</label>
+                    <input id="vehicles" type="number" min="0" max="10000" value="100" required>
+
+                    <label for="speed">Average speed (km/h)</label>
+                    <input id="speed" type="number" min="0" max="250" step="0.1" value="20" required>
+
+                    <button type="submit" id="predictBtn">Predict traffic</button>
+                </form>
+                <p id="message" role="status"></p>
+            </article>
+
+            <article class="panel result-panel">
+                <h2>Prediction result</h2>
+                <div id="resultBadge" class="result-badge">Awaiting input</div>
+                <p id="resultText">Enter traffic details and select Predict traffic.</p>
+
+                <div class="signal-box">
+                    <div class="signal-light red"></div>
+                    <div class="signal-light yellow"></div>
+                    <div class="signal-light green"></div>
+                    <div>
+                        <p class="muted">Simulated green signal</p>
+                        <h2><span id="signalTime">—</span> seconds</h2>
+                    </div>
+                </div>
+                <p class="disclaimer">
+                    Signal timing is a simulation only. It does not control real traffic lights.
+                </p>
+            </article>
+        </section>
+
+        <section class="panel chart-panel">
+            <h2>Prediction history</h2>
+            <p class="muted">Traffic levels predicted during this browser session.</p>
+            <canvas id="trafficChart"></canvas>
+        </section>
+    </main>
+
+    <footer>
+        AI Traffic Flow Optimizer · Educational prototype · Synthetic training data
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
